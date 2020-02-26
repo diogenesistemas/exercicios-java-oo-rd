@@ -20,7 +20,33 @@ public class NumeroPrimo {
      */
     public Set<Integer> getNumerosPrimosDe(Set<Integer> numeros) {
         // TODO: implemente o código deste método
-        return null;
+
+        Set<Integer> numerosPrimos = new TreeSet<>();
+
+        for (Integer numero : numeros) {
+
+            if (ehPrimo(numero)){
+                numerosPrimos.add(numero);
+
+            }
+
+        }
+
+        return numerosPrimos;
+    }
+
+
+    private Boolean ehPrimo(Integer numero){
+        int contador = 0;
+        for (int i=1; i<=numero; i++){
+            if (numero%i==0){
+                contador++;
+            }
+            if(contador>2){
+                return Boolean.FALSE;
+            }
+        }
+        return Boolean.TRUE;
     }
 
 }

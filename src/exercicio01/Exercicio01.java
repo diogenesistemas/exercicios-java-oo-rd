@@ -1,7 +1,6 @@
 package exercicio01;
 
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Exercicio01 {
 
@@ -28,6 +27,16 @@ public class Exercicio01 {
      */
     private static Set<Integer> getSetDe(int[] numeros) {
         // TODO: implemente o código deste método
-        return null;
+        Set<Integer> setRetorno = new HashSet<Integer>(Arrays.asList(convertIntToInteger(numeros)));
+        return setRetorno;
+    }
+
+
+    private static Integer[] convertIntToInteger(int[] numeros){
+        Integer[] outroArray = new Integer[numeros.length];
+        for (int i=0; i<numeros.length;i++) {
+            outroArray[i]=Integer.valueOf(numeros[i]);
+        }
+        return outroArray;
     }
 }
